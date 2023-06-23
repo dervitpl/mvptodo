@@ -1,0 +1,15 @@
+<h2>Funkcjonalności</h2>
+<a href="/create-functionality"><button>Dodaj funkconalność</button></a>
+<ul>
+  <li *ngFor="let functionality of functionalities">
+    <h4>{{ functionality.name }}</h4>
+    <td>
+      <button (click)="editFunctionality(functionality.functionalityId)" routerLink="/edit-functionality/{{ functionality.functionalityId }}">
+        Edytuj
+      </button>
+        <button (click)="deleteFunctionality(functionality.functionalityId)">Usuń</button>
+        <button (click)="navigateToFunctionalityDetails(functionality)">Szczegóły</button>
+      </td>
+  </li>
+</ul>
+

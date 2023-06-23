@@ -1,0 +1,38 @@
+<form [formGroup]="taskForm" (ngSubmit)="createTask()">
+  <div>
+    <label for="name">Nazwa:</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+  <div>
+    <label for="description">Opis:</label>
+    <input type="text" id="description" formControlName="description" />
+  </div>
+  <div>
+    <label for="status">Status:</label>
+    <select formControlName="status" id="status" class="form-control">
+      <option value="TODO">TODO</option>
+      <option value="DOING">DOING</option>
+      <option value="DONE">DONE</option>
+    </select>
+  </div>
+  <div>
+    <label for="priority">Priorytet:</label>
+    <select formControlName="priority" id="priority" class="form-control">
+      <option value="niski">Niski</option>
+      <option value="średni">Średni</option>
+      <option value="wysoki">Wysoki</option>
+    </select>
+  </div>
+  <div>
+    <label for="functionality">Funkcjonalność:</label>
+    <select formControlName="functionalityId">
+      <option *ngFor="let functionality of functionalities" [value]="functionality.functionalityId">{{ functionality.name }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="estimatedTime">Przewidywany czas wykonania:</label>
+    <input type="number" id="estimatedTime" formControlName="estimatedTime" required>
+    <a> godz:</a>
+  </div>
+  <button type="submit">Utwórz zadanie</button>
+</form>

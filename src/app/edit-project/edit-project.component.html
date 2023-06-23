@@ -1,0 +1,9 @@
+<h2>Edytuj Projekt</h2>
+
+<form [formGroup]="projectForm" (ngSubmit)="updateProject()">
+  <div>
+    <label for="name">Nazwa:</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+  <div>
+    <label for="description">Opis:</label>

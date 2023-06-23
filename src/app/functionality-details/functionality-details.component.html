@@ -1,0 +1,14 @@
+<div *ngIf="functionality">
+  <h2>{{ functionality.name }}</h2>
+  <p>{{ functionality.description }}</p>
+  <p>Status: {{ functionality.status }}</p>
+  <p>Priorytet: {{functionality.priority}}</p>
+  <p>Data dodania: {{ functionality.creationDate | date }}</p>
+  <p>Data startu: {{ functionality.startDate | date }}</p>
+
+
+  <h3>Zadania:</h3>
+  <ul>
+    <li *ngFor="let task of functionality.tasks">{{ task.name }}</li>
+  </ul>
+</div>
